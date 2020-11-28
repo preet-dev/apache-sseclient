@@ -15,7 +15,7 @@ Create the request.
 SseRequest request = new SseRequest(YOUR_REQUEST_URI);
 ```
 
-Create the SSE client instance and provice `ExecutorService` instance to run the requests in a new thread.
+Create the SSE client instance and provide `ExecutorService` instance to run the requests in a new thread.
 ```
 ApacheHttpSseClient sseClient = new ApacheHttpSseClient(asyncClient, Executors.newFixedThreadPool(CONCURRENT_SSE_STREAMS));
 ```
