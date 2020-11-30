@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'dev.manpreet'
@@ -48,6 +49,18 @@ test {
             test(name: 'sse-tests') {
                 builder.packages { 'package'(name: 'org.apache.client.sse.*') {} }
             }
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = ''
+            artifactId = ''
+            version = '1.0'
+
+            from components.java
         }
     }
 }
