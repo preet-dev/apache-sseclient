@@ -23,4 +23,4 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x sseclient/gradlew
     - name: Build with Gradle
-      run: ./sseclient/gradlew build test publish
+      run: ./sseclient/gradlew -p sseclient build test publish
