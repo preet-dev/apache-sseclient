@@ -56,11 +56,9 @@ test {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = ''
-            artifactId = ''
+            groupId = 'org.apache.client.sse'
+            artifactId = 'apache-sseclient'
             version = '1.0'
-
-            from components.java
         }
     }
 }
