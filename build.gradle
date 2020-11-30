@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'dev.manpreet'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.12'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient-cache', version: '4.5.12'
+    compile group: 'org.apache.httpcomponents', name: 'httpasyncclient', version: '4.1.4'
+    testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.2'
+    testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.2'
+    testCompile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.10.2'
+    testCompile group: 'commons-io', name: 'commons-io', version: '2.8.0'
+    testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
+    testCompile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    testCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Apache SSE client',
+                'Implementation-Version': '1.0'
+    }
+}
+
+task fatJar(type: Jar) {
+    version("1.0-uber")
+    manifest {
+        attributes 'Implementation-Title': 'Apache SSE client',
+                'Implementation-Version': '1.0'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+test {
+    useTestNG() {
+        def builder = suiteXmlBuilder();
+        builder.suite(name: 'sse-tests') {
+            test(name: 'sse-tests') {
+                builder.packages { 'package'(name: 'org.apache.client.sse.*') {} }
+            }
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = ''
+            artifactId = ''
+            version = '1.0'
+
+            from components.java
+        }
+    }
+}
