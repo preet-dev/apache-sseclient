@@ -1,4 +1,4 @@
-package org.apache.client.sse;
+package dev.manpreet.apache.sseclient;
 
 public class Event {
 

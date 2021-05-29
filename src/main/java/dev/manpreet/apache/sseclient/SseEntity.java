@@ -1,4 +1,4 @@
-package org.apache.client.sse;
+package dev.manpreet.apache.sseclient;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.AbstractHttpEntity;

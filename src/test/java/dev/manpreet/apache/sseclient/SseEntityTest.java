@@ -1,4 +1,4 @@
-package org.apache.client.sse;
+package dev.manpreet.apache.sseclient;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

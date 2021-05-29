@@ -1,7 +1,7 @@
-package org.apache.client.sse.utils;
+package dev.manpreet.apache.sseclient.utils;
 
+import dev.manpreet.apache.sseclient.Event;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.client.sse.Event;
 
 import java.util.concurrent.TimeUnit;
 

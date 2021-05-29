@@ -1,7 +1,7 @@
-package org.apache.client.sse;
+package dev.manpreet.apache.sseclient;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.client.sse.utils.TestUtils;
+import dev.manpreet.apache.sseclient.utils.TestUtils;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.testng.Assert;
