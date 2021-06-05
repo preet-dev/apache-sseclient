@@ -1,10 +1,20 @@
-plugins {
-    id 'java'
-    id 'maven-publish'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+    }
 }
 
-group 'dev.manpreet'
-version '1.0'
+plugins {
+    id 'java'
+    id 'com.bmuschko.nexus' version '2.3.1'
+}
+
+archivesBaseName = 'apache-sseclient'
+group = "dev.manpreet"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -53,12 +63,43 @@ test {
     }
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'org.apache.client.sse'
-            artifactId = 'apache-sseclient'
-            version = '1.0'
+modifyPom {
+    project {
+        name 'apache-sseclient'
+        description 'SSE client for apache HTTP client'
+        url 'https://github.com/autopreet/apache-sseclient'
+        inceptionYear '2020'
+
+        scm {
+            url 'https://github.com/autopreet/apache-sseclient'
+            connection 'scm:https://github.com/autopreet/apache-sseclient.git'
+            developerConnection 'scm:https://github.com/autopreet/apache-sseclient.git'
+        }
+
+        licenses {
+            license {
+                name 'The Apache Software License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id 'autopreet'
+                name 'Manpreet'
+                email 'manpreet.333@gmail.com'
+            }
         }
     }
+}
+
+extraArchive {
+    sources = true
+}
+
+nexus {
+    sign = true
+    repositoryUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+    snapshotRepositoryUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
 }
