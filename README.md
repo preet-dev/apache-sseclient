@@ -4,6 +4,8 @@ This is a wrapper around the Apache HTTP components async client to listen for a
 
 ### Usage
 
+```implementation 'dev.manpreet:apache-sseclient:1.0'```
+
 Create an instance of the async client & start it.
 ```
 CloseableHttpAsyncClient asyncClient = HttpAsyncClients.createDefault();
