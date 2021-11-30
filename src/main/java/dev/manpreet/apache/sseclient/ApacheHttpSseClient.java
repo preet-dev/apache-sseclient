@@ -43,12 +43,16 @@ public class ApacheHttpSseClient {
             @Override
             protected void onResponseReceived(HttpResponse response) {
                 this.response = new SseResponse(response);
-                futureResp.complete(this.response);
             }
 
             @Override
             protected SseResponse buildResult(HttpContext context) throws Exception {
                 return response;
+            }
+
+            @Override
+            protected void releaseResources() {
+                futureResp.complete(response);
             }
         };
 
