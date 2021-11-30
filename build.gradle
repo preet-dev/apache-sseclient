@@ -57,7 +57,7 @@ test {
         def builder = suiteXmlBuilder();
         builder.suite(name: 'sse-tests') {
             test(name: 'sse-tests') {
-                builder.packages { 'package'(name: 'org.apache.client.sse.*') {} }
+                builder.packages { 'package'(name: 'dev.manpreet.apache.sseclient.*') {} }
             }
         }
     }
