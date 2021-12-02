@@ -1,13 +1,13 @@
 # apache-sseclient
 
 [![Java CI with Gradle](https://github.com/autopreet/apache-sseclient/actions/workflows/gradle.yml/badge.svg)](https://github.com/autopreet/apache-sseclient/actions/workflows/gradle.yml)
+![Sonar Coverage](https://img.shields.io/sonar/coverage/autopreet_apache-sseclient/master?server=https%3A%2F%2Fsonarcloud.io)
 ![GitHub last commit](https://img.shields.io/github/last-commit/autopreet/apache-sseclient)
 ![GitHub all releases](https://img.shields.io/github/downloads/autopreet/apache-sseclient/total)
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/autopreet/apache-sseclient)
 ![GitHub](https://img.shields.io/github/license/autopreet/apache-sseclient)
 ![GitHub Repo stars](https://img.shields.io/github/stars/autopreet/apache-sseclient?style=social)
-
 
 This is a wrapper around the Apache HTTP components async client to send [Server-Sent Events](https://www.w3.org/TR/eventsource/).
 
