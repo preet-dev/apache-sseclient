@@ -65,13 +65,18 @@ test {
     }
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
 sonarqube {
     properties {
         property "sonar.projectKey", "autopreet_apache-sseclient"
         property "sonar.organization", "autopreet"
         property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.java.coveragePlugin", "jacoco"
-        property 'sonar.jacoco.reportPaths', "build/jacoco/test.exec"
+        property "sonar.language", "java"
     }
 }
 
