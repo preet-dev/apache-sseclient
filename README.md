@@ -1,6 +1,15 @@
 # apache-sseclient
 
-This is a wrapper around the Apache HTTP components async client to listen for and process [Server-Sent Events](https://www.w3.org/TR/eventsource/).
+[![Java CI with Gradle](https://github.com/autopreet/apache-sseclient/actions/workflows/gradle.yml/badge.svg)](https://github.com/autopreet/apache-sseclient/actions/workflows/gradle.yml)
+![GitHub last commit](https://img.shields.io/github/last-commit/autopreet/apache-sseclient)
+![GitHub all releases](https://img.shields.io/github/downloads/autopreet/apache-sseclient/total)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/autopreet/apache-sseclient)
+![GitHub](https://img.shields.io/github/license/autopreet/apache-sseclient)
+![GitHub Repo stars](https://img.shields.io/github/stars/autopreet/apache-sseclient?style=social)
+
+
+This is a wrapper around the Apache HTTP components async client to send [Server-Sent Events](https://www.w3.org/TR/eventsource/).
 
 ### Usage
 
