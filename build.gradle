@@ -63,11 +63,18 @@ test {
             }
         }
     }
+    finalizedBy jacocoTestReport
 }
 
 jacocoTestReport {
+    additionalSourceDirs.from = files(sourceSets.main.allSource.srcDirs)
+    sourceDirectories.from = files(sourceSets.main.allSource.srcDirs)
+    classDirectories.from = files(sourceSets.main.output)
     reports {
-        xml.enabled true
+        html.enabled = false
+        xml.enabled = true
+        xml.destination = file("${buildDir}/jacoco/test.xml")
+        csv.enabled = false
     }
 }
 
